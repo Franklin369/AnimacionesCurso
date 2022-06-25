@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimacionesCurso.Vistas.Vbehaviors.Ejercicio2"
+             xmlns:anim="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:controles="clr-namespace:AnimacionesCurso.Controles.Vbehaviors">
+ <Grid>
+  <Grid RowDefinitions="360,*">
+   <BoxView BackgroundColor="#EF556E"
+            HorizontalOptions="Fill"
+            TranslationY="{Binding ScrollPorcentaje,Source={x:Reference scrollView},Converter={StaticResource ScrollValueConverter},ConverterParameter='-10;0;200;false;0'}"
+            x:Name="box"/>
+  
+   <Image x:Name="imgfondo"
+          Source="https://i.blogs.es/a85591/como-encontrar-lugares-para-usar-como-fondo-sesiones-fotograficas-1-/500_333.jpg"
+          Aspect="AspectFill"
+          >
+    <Image.Triggers>
+     <DataTrigger TargetType="Image"
+                  Binding="{Binding ScrollPosicion,Source={x:Reference scrollView},
+      Converter={StaticResource ConvertidordeComparacion},
+      ConverterParameter='180;>'}"
+                  Value="true">
+      <DataTrigger.EnterActions>
+       <anim:AnimateDouble TargetProperty="{x:Static VisualElement.OpacityProperty}"
+                           To="0"
+                           Duration="500" />
+      </DataTrigger.EnterActions>
+      <DataTrigger.ExitActions>
+       <anim:AnimateDouble TargetProperty="{x:Static VisualElement.OpacityProperty}"
+                           To="1"
+                           Duration="500" />
+      </DataTrigger.ExitActions>
+     </DataTrigger>
+    </Image.Triggers>
+   </Image>
+   <controles:ScrollerView Grid.RowSpan="2"
+                           x:Name="scrollView">
+    <StackLayout Margin="20,300,20,20">
+     <Frame CornerRadius="20"
+            HeightRequest="400"
+            BackgroundColor="#DC1B40"
+            HasShadow="False">
+      <StackLayout>
+           <Label FontAttributes="Bold"
+             FontSize="50"
+             TextColor="White"
+             Text="{Binding ScrollPosicion,Source={x:Reference scrollView}}" />
+       <Label FontAttributes="Bold"
+              FontSize="40"
+              TextColor="White"
+              Text="{Binding TranslationY,Source={x:Reference box}}" />
+      </StackLayout>
+  
+     </Frame>
+     <Frame CornerRadius="20"
+            HeightRequest="200"
+            BackgroundColor="#EF556E"
+            HasShadow="False"></Frame>
+     <Frame CornerRadius="20"
+            HeightRequest="200"
+            BackgroundColor="#EF556E"
+            HasShadow="False"></Frame>
+    </StackLayout>
+   </controles:ScrollerView>
+  </Grid>
+  <StackLayout BackgroundColor="#EF556E"
+               HeightRequest="90"
+               VerticalOptions="Start"
+               Opacity="0">
+   <StackLayout.Triggers>
+    <DataTrigger TargetType="StackLayout"
+                 Binding="{Binding ScrollPosicion,
+     Source={x:Reference scrollView},
+     Converter={StaticResource ConvertidordeComparacion},
+     ConverterParameter='180;>'}"
+                 Value="true">
+     <DataTrigger.EnterActions>
+      <anim:AnimateDouble TargetProperty="{x:Static VisualElement.OpacityProperty}"
+                          To="1"
+                          Duration="500"/>
+     
+     </DataTrigger.EnterActions>
+     <DataTrigger.ExitActions>
+      <anim:AnimateDouble TargetProperty="{x:Static VisualElement.OpacityProperty}"
+                          To="0"
+                          Duration="500"/>
+     
+     </DataTrigger.ExitActions>
+    </DataTrigger>
+   </StackLayout.Triggers>
+   <Label Text="Soy el encabezado"
+          TextColor="White"
+          FontAttributes="Bold"
+          FontSize="30"
+          VerticalOptions="CenterAndExpand"
+          Margin="20,00" />
+  </StackLayout>
+ </Grid>
+</ContentPage>

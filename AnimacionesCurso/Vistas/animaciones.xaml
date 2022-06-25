@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimacionesCurso.Vistas.animaciones"
+             xmlns:triggers="clr-namespace:AnimacionesCurso.Triggers.Animaciones">
+    <ContentPage.Resources>
+        <Style x:Key="btn"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="White" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+            <Setter Property="TextTransform"
+                    Value="None" />
+            <Setter Property="TextColor"
+                    Value="#1B1B1B" />
+            <Setter Property="FontSize"
+                    Value="28" />
+            <Setter Property="CornerRadius"
+                    Value="15" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="*,auto,auto,auto">
+        <Frame BackgroundColor="#007FFF"
+               Margin="20"
+               CornerRadius="15"
+               HasShadow="False"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HeightRequest="250"
+               WidthRequest="250"
+               x:Name="Frame">
+            <Frame.Triggers>
+                <MultiTrigger TargetType="Frame">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding EstadoRotar}"
+                                          Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.EnterActions>
+                        <triggers:Rotacioninfinita estado="True"/>
+                    </MultiTrigger.EnterActions>
+                    <MultiTrigger.ExitActions>
+                        <triggers:Rotacioninfinita estado="False"/>
+                    </MultiTrigger.ExitActions>
+                </MultiTrigger>
+                <MultiTrigger TargetType="Frame">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding EstadoSacudir}"
+                                          Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.EnterActions>
+                        <triggers:Sacudir />
+                    </MultiTrigger.EnterActions>
+                    
+                </MultiTrigger>
+                <MultiTrigger TargetType="Frame">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding EstadoPalpitar}"
+                                          Value="true" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.EnterActions>
+                        <triggers:Palpitar estado="True" />
+                    </MultiTrigger.EnterActions>
+                    <MultiTrigger.ExitActions>
+                        <triggers:Palpitar estado="False"/>
+                    </MultiTrigger.ExitActions>
+                </MultiTrigger>
+            </Frame.Triggers>
+        </Frame>
+        <StackLayout Orientation="Horizontal"
+                     Grid.Row="1"
+                     Margin="10">
+            <Button Text="Rotacion"
+                    Style="{DynamicResource btn}"
+                    x:Name="btnRotar"
+                    Clicked="btnRotar_Clicked" />
+            <Button Text="Translate"
+                    Style="{DynamicResource btn}"
+                    x:Name="btntranslate"
+                    Clicked="btntranslate_Clicked"
+                    HorizontalOptions="CenterAndExpand" />
+            <Button Text="Scale"
+                    Style="{DynamicResource btn}"
+                    x:Name="btnscale"
+                    Clicked="btnscale_Clicked" />
+        </StackLayout>
+        <StackLayout Grid.Row="2"
+                     Margin="10"
+                     Orientation="Horizontal">
+            <Button Text="Fade"
+                    Style="{DynamicResource btn}"
+                    x:Name="btnfade"
+                    Clicked="btnfade_Clicked" />
+            <Button Text="Rotate X"
+                    Style="{DynamicResource btn}"
+                    HorizontalOptions="CenterAndExpand"
+                    x:Name="btnrotatex"
+                    Clicked="btnrotatex_Clicked" />
+            <Button Text="Rotate Y"
+                    Style="{DynamicResource btn}"
+                    x:Name="rotatey"
+                    Clicked="rotatey_Clicked" />
+        </StackLayout>
+        <ScrollView Grid.Row="3"
+                    Orientation="Horizontal"
+                    Margin="10">
+            <Frame CornerRadius="10"
+                   BackgroundColor="#B8A5FF">
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Sacudir"
+                            Style="{DynamicResource btn}"
+                            Command="{Binding Sacudircommand}" />
+                    <Button Text="Rotacion infinita"
+                            Style="{DynamicResource btn}"
+                            Command="{Binding RotarInfinitocommand}"/>
+                    <Button Text="Detener rotacion"
+                            Style="{DynamicResource btn}"
+                            Command="{Binding Detenercommand}"/>
+                    <Button Text="Palpitar"
+                            Style="{DynamicResource btn}"
+                            Command="{Binding Palpitarcommand}" />
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </Grid>
+</ContentPage>

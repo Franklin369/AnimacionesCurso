@@ -1,0 +1,17 @@
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\bin\Debug\netstandard2.0\AnimacionesCurso.deps.json
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\bin\Debug\netstandard2.0\AnimacionesCurso.dll
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\bin\Debug\netstandard2.0\AnimacionesCurso.pdb
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.csproj.AssemblyReference.cache
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.GeneratedMSBuildEditorConfig.editorconfig
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\Vistas\animaciones.xaml.g.cs
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\Vistas\Vbehaviors\Ejercicio1.xaml.g.cs
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\Vistas\Vbehaviors\Ejercicio2.xaml.g.cs
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.AssemblyInfoInputs.cache
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.AssemblyInfo.cs
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.csproj.CoreCompileInputs.cache
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.dll
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\refint\AnimacionesCurso.dll
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\AnimacionesCurso.pdb
+E:\Proyectos Xamarin\Desafios\Hijos\AnimacionesCurso\AnimacionesCurso\obj\Debug\netstandard2.0\ref\AnimacionesCurso.dll

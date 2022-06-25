@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimacionesCurso.Vistas.Vbehaviors.Ejercicio1"
+             xmlns:behaviors="clr-namespace:AnimacionesCurso.Behaviors.Bvbhaviors"
+             xmlns:prismB="clr-namespace:Prism.Behaviors;assembly=Prism.Forms">
+    <Grid  BackgroundColor="#282C34">
+        <ScrollView>
+            <ScrollView.Behaviors>
+                <prismB:EventToCommandBehavior EventName="Scrolled"
+                                               Command="{Binding Scrollcommand}"
+                                               EventArgsParameterPath="ScrollY" />
+            </ScrollView.Behaviors>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="vista.png"
+                           HeightRequest="120"
+                           Margin="20,20,0,0">
+                        <Image.Behaviors>
+                            <behaviors:ImageEjercicio1 ScrollData="{Binding PosicionenPantalla}" />
+                        </Image.Behaviors>
+                    </Image>
+                    <StackLayout  HorizontalOptions="EndAndExpand"
+                                  Margin="10">
+                        <Label Text="codigo369.com"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               FontSize="Title" />
+                        <Button BackgroundColor="#3498db"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                Text="Seguir + "
+                                CornerRadius="10" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="20">
+                    <Frame   BackgroundColor="#34495e"
+                             CornerRadius="15"
+                             HeightRequest="200"
+                             HasShadow="False" />
+                    <Frame   BackgroundColor="#34495e"
+                             CornerRadius="15"
+                             HeightRequest="200"
+                             HasShadow="False" />
+                    <Frame   BackgroundColor="#34495e"
+                             CornerRadius="15"
+                             HeightRequest="200"
+                             HasShadow="False" />
+                    <Frame   BackgroundColor="#34495e"
+                             CornerRadius="15"
+                             HeightRequest="200"
+                             HasShadow="False" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <Button VerticalOptions="End"
+                FontAttributes="Bold"
+                HorizontalOptions="End"
+                Text="{Binding PosicionenPantalla}"
+                HeightRequest="80"
+                WidthRequest="80"
+                FontSize="40"
+                Margin="30"
+                BackgroundColor="White"
+                CornerRadius="40" />
+    </Grid>
+</ContentPage>
